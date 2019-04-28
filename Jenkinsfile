@@ -5,7 +5,8 @@ pipeline {
 	stages {
 		stage('Init'){
 			steps{
-			    bat 'echo %JAVA_HOME%'
+			    bat 'echo JAVA_HOME = %JAVA_HOME%'
+			    bat 'echo JRE_HOME = %JRE_HOME%'
 			    bat 'mvn clean package'
 			}
 		}
