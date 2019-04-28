@@ -6,6 +6,7 @@ pipeline {
 		stage('Init'){
 			steps{
 			    bat 'echo %Path%'
+			    bat 'mvn clean package'
 			}
 		}
 
