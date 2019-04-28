@@ -3,9 +3,21 @@ pipeline {
 	agent any
 	
 	stages {
+		stage('Init'){
+			steps{
+			    echo 'Testing...'
+			}
+		}
+
 		stage('Build'){
 			steps {
-				bat 'mvn clean package'
+				echo 'Building...'
+			}
+		}
+
+		stage('Deploy'){
+			steps {
+				echo 'Code Deployed.'
 			}
 		}
 		
@@ -13,7 +25,7 @@ pipeline {
 			/* agent section could go here as well */
 			steps {
 				echo 'Now Archiving...'
-				archiveArtifacts artifacts: '**/*war'
+				//archiveArtifacts artifacts: '**/*war'
 			}
 		}
 	}
