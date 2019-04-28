@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage('Init'){
 			steps{
-			    bat 'echo %Path%'
+			    bat 'echo %JAVA_HOME%'
 			    bat 'mvn clean package'
 			}
 		}
