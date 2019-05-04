@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage('Init'){
 			steps{
-			    bat 'echo JRE_HOME = %JRE_HOME%'
+			    bat "echo JRE_HOME = %JRE_HOME%"
 			}
 		}
 
