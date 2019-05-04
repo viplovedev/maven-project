@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage('Init'){
 			steps{
-			    mvn clean package
+			    bat 'mvn clean package'
 			}
 		}
 
