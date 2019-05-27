@@ -8,24 +8,10 @@ pipeline {
 			    bat 'mvn clean package'
 			}
 		}
-
-		stage('Build'){
-			steps {
-				echo 'Building...'
-			}
-		}
-
-		stage('Deploy'){
-			steps {
-				echo 'Code Deployed.'
-			}
-		}
-		
-		stage('Deploy to Staging'){
-			/* agent section could go here as well */
-			steps {
+		post {
+			success {
 				echo 'Now Archiving...'
-				//archiveArtifacts artifacts: '**/*war'
+				archiveArtifacts artifacts: '**/*war'
 			}
 		}
 	}
