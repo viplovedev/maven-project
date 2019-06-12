@@ -28,7 +28,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "winscp -i ${pem_file_loc} **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                        bat "copy_war_to_ec2.bat"
                     }
                 }
             }
