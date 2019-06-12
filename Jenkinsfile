@@ -28,7 +28,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "C:\\"Program Files (x86)"\\Jenkins\\workspace\\"package(through file)"\\copy_war_to_ec2.bat"
+                        bat "C:\\"Program Files (x86)"\\Jenkins\\workspace\\package("through file")\\copy_war_to_ec2.bat"
                     }
                 }
             }
